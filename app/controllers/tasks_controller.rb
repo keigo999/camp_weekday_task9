@@ -1,8 +1,6 @@
 class TasksController < ApplicationController
-  include TasksHelper
-
   def index
-    @tasks = Task.all
+    @tasks = Task.order(created_at: :desc).limit(5)
   end
 
   def new
@@ -15,7 +13,6 @@ class TasksController < ApplicationController
 
   def show
     @task = Task.find(params[:id])
-    status_confirmation(@task)
   end
 
   def create

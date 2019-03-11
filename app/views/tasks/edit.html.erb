@@ -13,7 +13,7 @@
 
   <div>
     <p><%= f.label "状態:" %></p>
-    <p><%= f.select :string, [["下書き", "0"],["公開", "1"],["アーカイブ", "2"]] %></p>
+    <p><%= f.select :status, [["下書き", "draft"],["公開", "published"],["アーカイブ", "archieved"]] %></p>
   </div>
 
     <p><%= f.submit "登録" %></p>
