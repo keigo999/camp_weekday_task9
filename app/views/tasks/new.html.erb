@@ -1,5 +1,11 @@
 <h1>タスク登録フォーム</h1>
 
+<div class = "error_box">
+  <% @task.errors.full_messages.each do |messages| %>
+    <p><%= messages  %></p>
+  <% end %>
+</div>
+
 <%= form_with model: @task, local: true do |f| %>
   <div>
     <p><%= f.label "タスク名:" %></p>
