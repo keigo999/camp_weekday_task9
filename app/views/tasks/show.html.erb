@@ -2,3 +2,7 @@
 <h2>メモ:<%= @task.memo %></h2>
 <h2>状態:<%= @status %></h2>
 <h2>登録日:<%= @task.created_at %></h2>
+
+<%= link_to "一覧", tasks_path %>
+<%= link_to "編集", edit_task_path %>
+<%= link_to "削除", task_path, method: :delete, date: {confirm: "削除してよろしいですか？"}  %>
