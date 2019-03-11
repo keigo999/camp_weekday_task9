@@ -1,8 +1,12 @@
-<h2>タイトル:<%= @task.title %></h2>
-<h2>メモ:<%= @task.memo %></h2>
-<h2>状態:<%= @status %></h2>
-<h2>登録日:<%= @task.created_at.strftime("%Y年%m月%d日") %></h2>
+<div class = "flash_box">
+  <%= flash[:notice] if flash[:notice] %>
+</div>  
+
+<h3>タイトル:<%= @task.title %></h3>
+<h3>メモ:<%= @task.memo %></h3>
+<h3>状態:<%= @status %></h3>
+<h3>登録日:<%= @task.created_at.strftime("%Y年%m月%d日") %></h3>
 
 <%= link_to "一覧", tasks_path %>
 <%= link_to "編集", edit_task_path %>
-<%= link_to "削除", task_path, method: :delete, data: {confirm: '削除してよろしいですか？'} %>
+<%= link_to "削除",  @task, method: :delete, data: {confirm: '削除してよろしいですか？'} %>
