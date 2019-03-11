@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  before_action :set_up, only: [:show, :edit, :update, :destroy, :hide]
+
   def index
     @tasks = Task.order(created_at: :desc).limit(5)
   end
@@ -8,11 +10,9 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = Task.find(params[:id])
   end
 
   def show
-    @task = Task.find(params[:id])
   end
 
   def create
@@ -26,7 +26,6 @@ class TasksController < ApplicationController
   end
 
   def update
-    @task = Task.find(params[:id])
     if @task.update(task_params)
       flash[:notice] = "タスクを更新しました。"
       redirect_to @task
@@ -36,7 +35,6 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task = Task.find(params[:id])
     @task.destroy
     redirect_to tasks_path
   end
@@ -45,6 +43,10 @@ class TasksController < ApplicationController
   end
 
   private
+
+  def set_up
+    @task = Task.find(params[:id])
+  end
 
   def task_params
     params.require(:task).permit(:title, :memo, :status)
