@@ -31,7 +31,7 @@ Task.create(
   created_at: '2019-02-07',
   updated_at: '2019-02-07'
 )
-
+#is_displayがfalseのデータを追加
 Task.create(
   title: 'ログ・イン機能',
   memo: 'ユーザーログイ機能を作成。テストも書く？そんなきがるる',

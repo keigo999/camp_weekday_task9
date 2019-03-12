@@ -1,5 +1,5 @@
 <h1>タスク登録フォーム</h1>
-
+<!-- パーシャルを使っています -->
 <%= render "layouts/shared" %>
 
 <%= form_with model: @task, local: true do |f| %>
@@ -23,6 +23,5 @@
 <% end %>
 
 <%= link_to "一覧", tasks_path %>
-
 
 
