@@ -31,3 +31,12 @@ Task.create(
   created_at: '2019-02-07',
   updated_at: '2019-02-07'
 )
+
+Task.create(
+  title: 'ログ・イン機能',
+  memo: 'ユーザーログイ機能を作成。テストも書く？そんなきがるる',
+  is_display: false,
+  status: 0,
+  created_at: '2019-02-07',
+  updated_at: '2019-02-07'
+)

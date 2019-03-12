@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_up, only: [:show, :edit, :update, :destroy, :hide]
+  before_action :set_up, only: [:show, :edit, :update, :destroy]
 
   def index
     @tasks = Task.order(created_at: :desc).limit(5)
@@ -40,6 +40,7 @@ class TasksController < ApplicationController
   end
   
   def hide
+    @task = Task.find_by(is_display: false)
   end
 
   private
