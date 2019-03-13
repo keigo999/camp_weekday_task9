@@ -19,5 +19,17 @@
 }
 
 .flash_box{
-  color : blue;
+  color: blue;
+}
+
+.status-draft {
+  color: #FF0000
+}
+
+.status-published {
+  color: #0000FF
+}
+
+.status-archieved {
+  color: #008000
 }

@@ -4,13 +4,7 @@
   <% @tasks.each do |task| %>
     <% task.is_display if true %>
       <ul>
-        <% if task.status == "draft" %>
-          <li><%= link_to task.title, task_path(task), :style=>"color:#FF0000;" %> <%= task.created_at.strftime("%Y年%m月%d日") %></li>
-        <% elsif task.status == "published" %>
-          <li><%= link_to task.title, task_path(task), :style=>"color:#0000FF;" %> <%= task.created_at.strftime("%Y年%m月%d日") %></li>
-        <% elsif task.status == "archieved" %>
-          <li><%= link_to task.title, task_path(task), :style=>"color:#008000;" %> <%= task.created_at.strftime("%Y年%m月%d日") %></li>
-        <% end %>
+          <li><%= link_to task.title, task, class: "status-#{task.status}" %> <%= task.created_at.strftime("%Y年%m月%d日") %></li>
       </ul>
   <% end %>
 </div>

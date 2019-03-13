@@ -40,7 +40,7 @@ class TasksController < ApplicationController
   end
   
   def hide
-    @tasks = Task.where(is_display: false).limit(5)
+    @tasks = Task.where(is_display: false)
   end
 
   private
