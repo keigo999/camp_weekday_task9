@@ -2,12 +2,11 @@
 
 <div>
   <% @tasks.each do |task| %>
-    <% if task.is_display == true %>
       <ul>
           <li><%= link_to task.title, task, class: "status-#{task.status}" %> <%= task.created_at.strftime("%Y年%m月%d日") %></li>
       </ul>
-    <% end %>
   <% end %>
 </div>
+
 <%= link_to "登録する", new_task_path %>
 <%= link_to "非表示一覧" , tasks_hide_path %>
